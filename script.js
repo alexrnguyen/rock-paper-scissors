@@ -71,6 +71,8 @@ function playRound(playerSelection, computerSelection) {
     }
 
     console.log(output);
+
+    // If playerSelection is invalid, do not return a round winner
     if (output != "") {
         let winner = determineRoundWinner(playerSelection, computerSelection);
         return winner;
@@ -79,7 +81,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 /**
- * 
+ * Determine the winner of each round based on the player and computer input
+ * @param {string} playerSelection - Player selection
+ * @param {string} computerSelection - Computer selection
+ * @returns {string} Winner of a round
  */
 function determineRoundWinner(playerSelection, computerSelection) {
     let winner = "";
@@ -109,9 +114,9 @@ function determineRoundWinner(playerSelection, computerSelection) {
 }
 
 /**
- * 
- * @param {*} score 
- * @returns 
+ * Updates a score
+ * @param {number} score 
+ * @returns {number} The updated score
  */
 function updateScore(score) {
     score += 1;
@@ -119,26 +124,27 @@ function updateScore(score) {
 }
 
 /**
- * 
- * @param {*} playerScore 
- * @param {*} computerScore 
+ * Determines the winner of a game by checking who has the most points
+ * @param {*} playerScore - Player's score
+ * @param {*} computerScore - Computer's score
+ * @returns {string} Outcome of game
  */
 function determineGameWinner(playerScore, computerScore) {
-    let output = "";
+    let outcome = "";
     if (playerScore > computerScore) {
-        output = "You win!";
+        outcome = "You win!";
     }
     else if (playerScore < computerScore) {
-        output = "You lose!";
+        outcome = "You lose!";
     }
     else {
-        output = "It's a tie!";
+        outcome = "It's a tie!";
     }
-    return output;
+    return outcome;
 }
 
 /**
- * 
+ * Play a game of Rock Paper Scissors consisting of multiple rounds
  */
 function game() {
     let playerScore = 0;
@@ -155,6 +161,7 @@ function game() {
         else if (winner == "CPU") {
             computerScore = updateScore(computerScore);
         }
+
         console.log(`Score after round ${i+1}: \n You: ${playerScore} \n Computer: ${computerScore}`);
     }
     console.log(determineGameWinner(playerScore, computerScore));
@@ -162,5 +169,3 @@ function game() {
 }
 
 game();
-
-//console.log(playRound(playerSelection, computerSelection));
