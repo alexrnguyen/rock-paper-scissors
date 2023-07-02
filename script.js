@@ -26,17 +26,12 @@ function getPlayerChoice() {
     // Prompt for input indefinitely until the user enters a valid choice
     while (1) {
         let input = window.prompt("Enter your choice (rock, paper, or scissors):");
-        if (input != null) {
-            input = input.toUpperCase();
-            if (input == "ROCK" || input == "PAPER" || input == "SCISSORS") {
-                return input.toUpperCase();
-            }
-            else {
-                console.log("Invalid input!");
-            }
+        input = input.toUpperCase();
+        if (input == "ROCK" || input == "PAPER" || input == "SCISSORS") {
+            return input.toUpperCase();
         }
         else {
-            break;
+            console.log("Invalid input!");
         }
     }
 }
@@ -71,13 +66,8 @@ function playRound(playerSelection, computerSelection) {
     }
 
     console.log(output);
-
-    // If playerSelection is invalid, do not return a round winner
-    if (output != "") {
-        let winner = determineRoundWinner(playerSelection, computerSelection);
-        return winner;
-    }
-    return "None";
+    let winner = determineRoundWinner(playerSelection, computerSelection);
+    return winner;
 }
 
 /**
