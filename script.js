@@ -35,6 +35,9 @@ function getPlayerChoice() {
                 console.log("Invalid input!");
             }
         }
+        else {
+            break;
+        }
     }
 }
 
@@ -63,13 +66,16 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
         output = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
-    else {
+    else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
         output = `You win! ${playerSelection} beats ${computerSelection}`;
     }
 
     console.log(output);
-    let winner = determineRoundWinner(playerSelection, computerSelection);
-    return winner;
+    if (output != "") {
+        let winner = determineRoundWinner(playerSelection, computerSelection);
+        return winner;
+    }
+    return "None";
 }
 
 /**
@@ -135,8 +141,8 @@ function determineGameWinner(playerScore, computerScore) {
  * 
  */
 function game() {
-    const playerScore = 0;
-    const computerScore = 0;
+    let playerScore = 0;
+    let computerScore = 0;
     for (let i = 0; i < NUM_ROUNDS; i++) {
         const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
