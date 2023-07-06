@@ -1,11 +1,14 @@
 body {
     text-align: center;
+    background-color: #F2D0A9;
 }
 
 .scores {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .score-container {
@@ -23,13 +26,32 @@ body {
 }
 
 .choice {
+    height: 100px;
+    width: 150px;
+    background-color: #067BC2;
     font-size: 30px;
 }
 
-.cpu>h3 {
-    margin-bottom: 0;
+.selection-container.cpu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.cpu-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 150px;
+    background-color: #D88C9A;
+    border: 2px solid;
+    font-size: 30px;
 }
 
 .game-result {
     font-weight: 800;
+    font-size: 100px;
 }
