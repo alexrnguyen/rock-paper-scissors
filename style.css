@@ -1,3 +1,5 @@
+/* Colour Palette: https://coolors.co/d88c9a-f2d0a9-067bc2-84bcda-30323d */
+
 body {
     text-align: center;
     background-color: #F2D0A9;
@@ -30,6 +32,10 @@ body {
     width: 150px;
     background-color: #067BC2;
     font-size: 30px;
+}
+
+.choice:hover {
+    background-color: #84BCDA;
 }
 
 .selection-container.cpu {
