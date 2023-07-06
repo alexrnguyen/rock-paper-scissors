@@ -1,3 +1,35 @@
+body {
+    text-align: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.choice {
+    font-size: 30px;
+}
+
+.cpu>h3 {
+    margin-bottom: 0;
+}
+
 .game-result {
     font-weight: 800;
 }
