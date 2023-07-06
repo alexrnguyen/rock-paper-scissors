@@ -59,5 +59,12 @@ body {
 
 .game-result {
     font-weight: 800;
-    font-size: 100px;
+    font-size: 50px;
+}
+
+.play-again {
+    background-color: #067BC2;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 8px 24px;
 }
